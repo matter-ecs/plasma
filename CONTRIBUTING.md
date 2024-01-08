@@ -60,7 +60,7 @@ benefit of the change.
 
 ## Releases
 
-Releases for Sentinel are made by a maintainer using a release branch and a
+Releases for Plasma are made by a maintainer using a release branch and a
 pull request.
 
 1. Create a new release branch
