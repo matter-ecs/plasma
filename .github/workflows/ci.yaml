@@ -45,7 +45,7 @@ jobs:
         uses: ok-nick/setup-aftman@v0.3.0
 
       - name: Install Dependencies
-        run: wally install --project-path example
+        run: wally install
 
       - name: Build
         run: rojo build --output build.rbxm default.project.json
