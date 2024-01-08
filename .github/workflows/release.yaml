@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+
+      - name: Install Aftman
+        uses: ok-nick/setup-aftman@v0.3.0
+
+      - name: Build
+        run: rojo build --output build.rbxm default.project.json
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build.rbxm
+
+  release:
+    name: Release
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+
+      - name: Download Build
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: plasma.rbxm
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Plasma ${{ github.ref }}
+          body: |
+            Plasma ${{ github.ref }} is now available!
+          files: |
+            plasma.rbxm
+
+  publish:
+    name: Publish
+    needs: [release]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+
+      - name: Install Aftman
+        uses: ok-nick/setup-aftman@v0.3.0
+
+      - name: Publish
+        run: wally publish --token ${{ secrets.WALLY_AUTH_TOKEN }}
