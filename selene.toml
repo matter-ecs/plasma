@@ -2,4 +2,4 @@ std = "roblox+testez"
 
 [rules]
 shadowing = "allow"
-mixed_tables = "allow" # Plasma currently relies heavily on mixed tables, but we should consider fixing this
+mixed_table = "allow" # Plasma currently relies heavily on mixed tables, but we should consider fixing this
