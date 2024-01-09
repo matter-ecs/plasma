@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 ### Fixed
 
 - automaticSize helper should now set minSize attribute correctly
+- Fixed the window position reseting when another input state update is processed while the window is being dragged
 
 ## [0.4.2] - 2022-07-10
 
