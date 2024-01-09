@@ -20,6 +20,12 @@ Plasma can be installed with [Wally] by including it as a dependency in your
 Plasma = "matter-ecs/plasma@0.4.1"
 ```
 
+## Migration
+
+If you're currently using the scope `evaera/plasma`, prior versions are the same
+package. You can migrate by changing your `wally.toml` file to use the scope
+`matter-ecs/plasma`.
+
 ## Building
 
 Before building, you'll need to install all dependencies using [Wally].
