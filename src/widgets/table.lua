@@ -12,10 +12,10 @@ local cell = Runtime.widget(function(text, font)
 		return create("TextButton", {
 			[ref] = "button",
 			BackgroundTransparency = 1,
-			Font = Enum.Font.SourceSans,
+			Font = Enum.Font.Gotham,
 			AutomaticSize = Enum.AutomaticSize.XY,
 			TextColor3 = style.textColor,
-			TextSize = 20,
+			TextSize = 16,
 			TextXAlignment = Enum.TextXAlignment.Left,
 			RichText = true,
 			AutoButtonColor = false,
@@ -26,15 +26,15 @@ local cell = Runtime.widget(function(text, font)
 			end,
 
 			create("UIPadding", {
-				PaddingBottom = UDim.new(0, 8),
-				PaddingLeft = UDim.new(0, 8),
-				PaddingRight = UDim.new(0, 8),
-				PaddingTop = UDim.new(0, 8),
+				PaddingBottom = UDim.new(0, 6),
+				PaddingLeft = UDim.new(0, 6),
+				PaddingRight = UDim.new(0, 6),
+				PaddingTop = UDim.new(0, 6),
 			}),
 		})
 	end)
 
-	refs.button.Font = font or Enum.Font.SourceSans
+	refs.button.Font = font or Enum.Font.Gotham
 	refs.button.Text = text
 
 	return {
