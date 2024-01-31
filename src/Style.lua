@@ -34,11 +34,7 @@ end
 ]=]
 function Style.set(styleFragment)
 	local existing = Runtime.useContext(ContextKey) or defaultStyle
-	local newStyle = {}
-
-	for key, value in pairs(existing) do
-		newStyle[key] = value
-	end
+	local newStyle = table.clone(existing)
 
 	for key, value in pairs(styleFragment) do
 		newStyle[key] = value
