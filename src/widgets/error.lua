@@ -8,26 +8,27 @@ return Runtime.widget(function(text)
 			BackgroundTransparency = 0,
 			BackgroundColor3 = Color3.fromRGB(231, 76, 60),
 			Name = "Error",
-			Size = UDim2.new(0, 100, 0, 75),
 			AutomaticSize = Enum.AutomaticSize.XY,
 
+			create("UICorner"),
+
 			create("UIPadding", {
-				PaddingBottom = UDim.new(0, 20),
-				PaddingLeft = UDim.new(0, 20),
-				PaddingRight = UDim.new(0, 20),
-				PaddingTop = UDim.new(0, 20),
+				PaddingLeft = UDim.new(0, 10),
+				PaddingRight = UDim.new(0, 10),
+				PaddingTop = UDim.new(0, 10),
 			}),
 
-			create("UIListLayout", {}),
+			create("UIListLayout", {
+				Padding = UDim.new(0, 10),
+			}),
 
 			create("TextLabel", {
 				Font = Enum.Font.GothamBold,
 				BackgroundTransparency = 1,
 				TextColor3 = Color3.fromRGB(255, 255, 255),
-				TextSize = 25,
-				AutomaticSize = Enum.AutomaticSize.X,
+				TextSize = 20,
+				AutomaticSize = Enum.AutomaticSize.XY,
 				Text = "⚠️  An Error Occurred",
-				Size = UDim2.fromOffset(0, 75),
 			}),
 
 			create("TextLabel", {
@@ -35,10 +36,9 @@ return Runtime.widget(function(text)
 				Font = Enum.Font.GothamMedium,
 				BackgroundTransparency = 1,
 				TextColor3 = Color3.fromRGB(255, 255, 255),
-				TextSize = 20,
+				TextSize = 16,
 				LineHeight = 1.2,
 				AutomaticSize = Enum.AutomaticSize.XY,
-				Size = UDim2.fromOffset(100, 75),
 				TextXAlignment = Enum.TextXAlignment.Left,
 				TextYAlignment = Enum.TextYAlignment.Top,
 			}),

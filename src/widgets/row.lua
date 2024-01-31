@@ -45,6 +45,7 @@ return Runtime.widget(function(options, fn)
 	local frame = refs.frame
 
 	frame.UIListLayout.HorizontalAlignment = options.alignment or Enum.HorizontalAlignment.Left
+	frame.UIListLayout.VerticalAlignment = options.verticalAlignment or Enum.VerticalAlignment.Top
 
 	Runtime.scope(fn)
 end)
