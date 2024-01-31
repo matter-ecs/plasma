@@ -72,7 +72,7 @@ return Runtime.widget(function(options)
 						x = math.clamp(x, 0, maxPos)
 
 						local percent = x / maxPos
-						
+
 						setPrecentageValue(percent)
 					end)
 				end,
