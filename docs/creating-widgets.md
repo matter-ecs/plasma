@@ -21,7 +21,7 @@ return Plasma.widget(function(text, color)
 			Font = Enum.Font.GothamBold,
 			TextColor3 = Color3.fromRGB(147, 147, 147),
 			BackgroundColor3 = Color3.fromRGB(54, 54, 54),
-			TextSize = 20,
+			TextSize = 16,
 			Size = UDim2.new(0, 0, 0, 30),
 			AutomaticSize = Enum.AutomaticSize.XY,
 

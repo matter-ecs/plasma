@@ -22,7 +22,7 @@ return Runtime.widget(function(text, options)
 			Font = Enum.Font.GothamBold,
 			AutomaticSize = Enum.AutomaticSize.XY,
 			TextColor3 = style.mutedTextColor,
-			TextSize = 20,
+			TextSize = 14,
 			RichText = true,
 		})
 	end)

@@ -18,9 +18,9 @@ return Runtime.widget(function(text)
 		create("TextLabel", {
 			[ref] = "label",
 			BackgroundTransparency = 1,
-			Font = Enum.Font.SourceSans,
+			Font = Enum.Font.Gotham,
 			TextColor3 = style.textColor,
-			TextSize = 20,
+			TextSize = 16,
 			RichText = true,
 		})
 
