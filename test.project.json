@@ -13,7 +13,7 @@
     },
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
-      "$path": "Packages",
+      "$path": "DevPackages",
       "Plasma": {
         "$path": "src"
       },
