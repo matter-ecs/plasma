@@ -1,4 +1,7 @@
-Packages
+Packages/
+DevPackages/
+wally.lock
+
 roblox.toml
 build
 plasma.rbxm

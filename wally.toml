@@ -23,5 +23,5 @@ exclude = [
     "roblox.toml",
 ]
 
-[dependencies]
+[dev-dependencies]
 TestEZ = "roblox/testez@0.4.1"
