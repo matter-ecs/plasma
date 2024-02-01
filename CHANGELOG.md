@@ -10,14 +10,26 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 
 ## [Unreleased]
 
+## [0.4.3] - 2024-01-31
+
 ### Added
 
-- The context functions are now exposed in `init.lua`
+- The context functions are now exposed in `init.lua`.
+- The table widget now supports selecting headings and cells in addition to
+  rows.
+
+### Changed
+
+- Widgets are now more compact.
 
 ### Fixed
 
-- automaticSize helper should now set minSize attribute correctly
-- Fixed the window position reseting when another input state update is processed while the window is being dragged
+- The `automaticSize` helper should now set `minSize` attribute correctly.
+- Fixed the window position resetting when another input state update is
+  processed while the window is being dragged.
+- Sliders will now update correctly when dynamically modifying the `min` and
+  `max` properties.
+- TestEZ is now correctly included as a dev dependency.
 
 ## [0.4.2] - 2022-07-10
 
@@ -81,7 +93,8 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 
 - Initial release
 
-[unreleased]: https://github.com/matter-ecs/plasma/compare/v0.4.2...HEAD
+[unreleased]: https://github.com/matter-ecs/plasma/compare/v0.4.3...HEAD
+[0.4.3]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.3
 [0.4.2]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.2
 [0.4.1]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.1
 [0.4.0]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.0
