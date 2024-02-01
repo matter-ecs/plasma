@@ -94,7 +94,7 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 - Initial release
 
 [unreleased]: https://github.com/matter-ecs/plasma/compare/v0.4.3...HEAD
-[0.4.2]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.3
+[0.4.3]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.3
 [0.4.2]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.2
 [0.4.1]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.1
 [0.4.0]: https://github.com/matter-ecs/plasma/releases/tag/v0.4.0
