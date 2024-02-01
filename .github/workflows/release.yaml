@@ -39,7 +39,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: plasma.rbxm
+
+      - name: Rename Build
+        run: mv build/build.rbxm plasma.rbxm
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
