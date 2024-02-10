@@ -13,6 +13,7 @@ return {
 	widget = Runtime.widget,
 	useState = Runtime.useState,
 	useInstance = Runtime.useInstance,
+	useRefs = Runtime.useRefs,
 	useEffect = Runtime.useEffect,
 	useKey = Runtime.useKey,
 	setEventCallback = Runtime.setEventCallback,

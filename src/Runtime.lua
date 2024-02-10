@@ -31,6 +31,8 @@ type StackFrame = {
 	discriminator: string | number,
 }
 
+type RefTable = { [string]: Instance }
+
 local stack: { StackFrame } = {}
 
 local recentErrors = {}
@@ -269,7 +271,7 @@ end
 	`useInstance` returns the `ref` table that is passed to it. You can use this to create references to objects
 	you want to update in the widget body.
 ]=]
-function Runtime.useInstance(creator: () -> Instance): Instance
+function Runtime.useInstance(creator: (ref: RefTable) -> Instance): Instance
 	local node = stack[#stack].node
 	local parentFrame = Runtime.nearestStackFrameWithInstance()
 
@@ -278,6 +280,8 @@ function Runtime.useInstance(creator: () -> Instance): Instance
 
 		node.refs = {}
 		local instance, container = creator(node.refs)
+
+		table.freeze(node.refs)
 
 		if instance ~= nil then
 			instance.Parent = parent
@@ -292,6 +296,24 @@ function Runtime.useInstance(creator: () -> Instance): Instance
 	if node.instance ~= nil and node.instance:IsA("GuiObject") then
 		parentFrame.childrenCount += 1
 		node.instance.LayoutOrder = parentFrame.childrenCount
+	end
+
+	return node.refs
+end
+
+--[=[
+	@within Plasma
+	@return { [string]: Instance } -- Returns the `ref` table
+	@tag hooks
+
+	Returns the `ref` table that is attached to the current `useInstance` call.
+
+	This hook can only be used inside `useInstance` and will error if done otherwise.
+]=]
+function Runtime.useRefs(): RefTable
+	local node = stack[#stack].node
+	if node.refs == nil or table.isfrozen(node.refs) then
+		error("Runtime.useRefs cannot be used outside Runtime.useInstance", 2)
 	end
 
 	return node.refs
