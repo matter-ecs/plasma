@@ -58,10 +58,10 @@ return function()
 				return Plasma.create("Frame", {
 					[ref] = "foo",
 					BackgroundColor3 = Color3.fromHex("#f00"),
-
+					-- children
 					Plasma.create("Frame", {
 						BackgroundColor3 = Color3.fromHex("#0f0"),
-
+						-- children
 						DescendantComponent(),
 					})
 				})
