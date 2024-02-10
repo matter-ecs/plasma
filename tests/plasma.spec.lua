@@ -63,7 +63,7 @@ return function()
 						BackgroundColor3 = Color3.fromHex("#0f0"),
 						-- children
 						DescendantComponent(),
-					})
+					}),
 				})
 			end
 
