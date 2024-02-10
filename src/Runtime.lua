@@ -308,7 +308,9 @@ end
 
 	Returns the `ref` table that is attached to the current `useInstance` call.
 
-	This hook can only be used inside `useInstance` and will error if done otherwise.
+	This hook can only be used inside `useInstance` and will error if done otherwise. You can use this instead
+	of the `ref` parameter if you're using nested functions that returns instances and don't want
+	to pass the table to a descendant via prop drilling.
 ]=]
 function Runtime.useRefs(): RefTable
 	local node = stack[#stack].node
