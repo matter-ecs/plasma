@@ -31,7 +31,7 @@ type StackFrame = {
 	discriminator: string | number,
 }
 
-type RefTable = { [string]: Instance }
+export type RefTable = { [string]: Instance }
 
 local stack: { StackFrame } = {}
 
