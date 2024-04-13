@@ -16,6 +16,7 @@ return Runtime.widget(function()
 		local Frame = Instance.new("Frame")
 		Frame.BackgroundTransparency = 1
 		Frame.Size = UDim2.new(0, 100, 0, 100)
+		Frame.AutoLocalize = false
 
 		local ImageLabel = Instance.new("ImageLabel")
 		ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -23,6 +24,7 @@ return Runtime.widget(function()
 		ImageLabel.Image = "rbxassetid://2689141406"
 		ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
 		ImageLabel.Size = UDim2.new(0, 100, 0, 100)
+		ImageLabel.AutoLocalize = false
 		ImageLabel.Parent = Frame
 
 		ref.frame = Frame

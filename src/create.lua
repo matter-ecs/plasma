@@ -53,6 +53,22 @@ local Runtime = require(script.Parent.Runtime)
 	print(ref.button.Text) --> hi
 	```
 ]=]
+
+local GUI_BASE_2D = {
+	"CanvasGroup",
+	"Frame",
+	"ImageLabel",
+	"ScrollingFrame",
+	"TextLabel",
+	"TextButton",
+	"ViewportFrame",
+	"TextBox",
+	"VideoFrame",
+	"ScreenGui",
+	"BillboardGui",
+	"SurfaceGui",
+}
+
 local function create(className, props)
 	props = props or {}
 
@@ -78,6 +94,10 @@ local function create(className, props)
 		else
 			instance[key] = value
 		end
+	end
+
+	if table.find(GUI_BASE_2D, className) then
+		instance.AutoLocalize = false
 	end
 
 	return instance
