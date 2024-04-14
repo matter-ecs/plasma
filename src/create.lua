@@ -76,6 +76,10 @@ local function create(className, props)
 
 	local instance = Instance.new(className)
 
+	if props["AutoLocalize"] == nil and table.find(GUI_BASE_2D, className) then
+		props["AutoLocalize"] = false
+	end
+
 	for key, value in pairs(props) do
 		if type(value) == "function" then
 			if eventCallback then
@@ -94,10 +98,6 @@ local function create(className, props)
 		else
 			instance[key] = value
 		end
-	end
-
-	if table.find(GUI_BASE_2D, className) then
-		instance.AutoLocalize = false
 	end
 
 	return instance
