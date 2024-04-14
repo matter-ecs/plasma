@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog][kac], and this project adheres to
 
 ## [Unreleased]
 
+### Added
+- Added `useRefs`
+
 ## [0.4.3] - 2024-01-31
 
 ### Added
