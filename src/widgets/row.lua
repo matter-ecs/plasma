@@ -28,6 +28,7 @@ return Runtime.widget(function(options, fn)
 	local refs = Runtime.useInstance(function(ref)
 		local Frame = Instance.new("Frame")
 		Frame.BackgroundTransparency = 1
+		Frame.AutoLocalize = false
 
 		local UIListLayout = Instance.new("UIListLayout")
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder

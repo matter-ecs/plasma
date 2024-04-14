@@ -53,12 +53,32 @@ local Runtime = require(script.Parent.Runtime)
 	print(ref.button.Text) --> hi
 	```
 ]=]
+
+local GUI_BASE_2D = {
+	"CanvasGroup",
+	"Frame",
+	"ImageLabel",
+	"ScrollingFrame",
+	"TextLabel",
+	"TextButton",
+	"ViewportFrame",
+	"TextBox",
+	"VideoFrame",
+	"ScreenGui",
+	"BillboardGui",
+	"SurfaceGui",
+}
+
 local function create(className, props)
 	props = props or {}
 
 	local eventCallback = Runtime.useEventCallback()
 
 	local instance = Instance.new(className)
+
+	if props["AutoLocalize"] == nil and table.find(GUI_BASE_2D, className) then
+		props["AutoLocalize"] = false
+	end
 
 	for key, value in pairs(props) do
 		if type(value) == "function" then
