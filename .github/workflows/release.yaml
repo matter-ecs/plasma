@@ -31,6 +31,8 @@ jobs:
     name: Release
     needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Project
         uses: actions/checkout@v3
@@ -46,9 +48,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          name: Plasma ${{ github.ref }}
+          name: Plasma ${{ github.ref_name }}
           body: |
-            Plasma ${{ github.ref }} is now available!
+            Plasma ${{ github.ref_name }} is now available!
           files: |
             plasma.rbxm
 
