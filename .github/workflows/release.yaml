@@ -41,6 +41,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
+          path: build
 
       - name: Rename Build
         run: mv build/build.rbxm plasma.rbxm
