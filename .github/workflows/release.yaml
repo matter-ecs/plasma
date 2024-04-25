@@ -31,6 +31,8 @@ jobs:
     name: Release
     needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Project
         uses: actions/checkout@v3
@@ -46,9 +48,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          name: Plasma ${{ github.ref }}
+          name: Plasma ${{ github.ref_name }}
           body: |
-            Plasma ${{ github.ref }} is now available!
+            Plasma ${{ github.ref_name }} is now available!
           files: |
             plasma.rbxm
 
@@ -63,5 +65,8 @@ jobs:
       - name: Install Aftman
         uses: ok-nick/setup-aftman@v0.3.0
 
+      - name: Wally Login
+        run: wally login --token ${{ secrets.WALLY_AUTH_TOKEN }}
+
       - name: Publish
-        run: wally publish --token ${{ secrets.WALLY_AUTH_TOKEN }}
+        run: wally publish
