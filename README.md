@@ -17,7 +17,7 @@ Plasma can be installed with [Wally] by including it as a dependency in your
 `wally.toml` file.
 
 ```toml
-Plasma = "matter-ecs/plasma@0.4.3"
+Plasma = "matter-ecs/plasma@0.4.4"
 ```
 
 ## Migration
